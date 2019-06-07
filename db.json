@@ -1,0 +1,52 @@
+{
+  "high-scores": [
+    {
+      "id": 1,
+      "userId": 101,
+      "name": "Alice",
+      "score": 7694
+    },
+    {
+      "id": 2,
+      "userId": 102,
+      "name": "Bob",
+      "score": 5925
+    },
+    {
+      "id": 3,
+      "userId": 103,
+      "name": "Carol",
+      "score": 6082
+    },
+    {
+      "id": 4,
+      "userId": 104,
+      "name": "Mike",
+      "score": 8955
+    },
+    {
+      "id": 5,
+      "userId": 105,
+      "name": "John",
+      "score": 2674
+    },
+    {
+      "id": 6,
+      "userId": 106,
+      "name": "George",
+      "score": 4698
+    },
+    {
+      "id": 7,
+      "userId": 107,
+      "name": "Ana",
+      "score": 7952
+    },
+    {
+      "id": 8,
+      "userId": 108,
+      "name": "Jane",
+      "score": 3891
+    }
+  ]
+}
