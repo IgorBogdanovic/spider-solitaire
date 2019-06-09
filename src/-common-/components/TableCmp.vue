@@ -179,7 +179,7 @@ export default {
     z-index: 2;
     display: flex;
     flex-flow: row wrap;
-    height: 3.125rem;
+    height: 5.125rem;
     padding: 0 3.25vw 0 4vw;
     margin: 0;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
@@ -257,7 +257,7 @@ export default {
       flex-flow: row wrap;
       align-items: flex-start;
       margin: 0;
-      padding: 1.2rem 3.25vw 1.2rem 4vw;
+      padding: 1.6rem 3.25vw 1.6rem 4vw;
       color: grey;
       border-bottom: 1px solid lightgray;
 

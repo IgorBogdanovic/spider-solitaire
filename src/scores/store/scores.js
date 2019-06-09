@@ -15,7 +15,7 @@ const state = {
 **************/
 const getters = {
   highScores: state => {
-    const scores = state.scores
+    const scores = state.scores.slice()
     return scores.sort((a, b) => {
       let acol = a.score
       let bcol = b.score

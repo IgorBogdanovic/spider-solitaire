@@ -1,0 +1,62 @@
+export default {
+  clubs: [
+    { id: 1, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubsA.png') },
+    { id: 2, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubs2.png') },
+    { id: 3, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubs3.png') },
+    { id: 4, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubs4.png') },
+    { id: 5, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubs5.png') },
+    { id: 6, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubs6.png') },
+    { id: 7, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubs7.png') },
+    { id: 8, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubs8.png') },
+    { id: 9, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubs9.png') },
+    { id: 10, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubs10.png') },
+    { id: 11, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubsJ.png') },
+    { id: 12, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubsQ.png') },
+    { id: 13, faceUp: false, type: 'clubs', imgSrc: require('@/game/assets/images/cardClubsK.png') }
+  ],
+  diamonds: [
+    { id: 1, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamondsA.png') },
+    { id: 2, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamonds2.png') },
+    { id: 3, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamonds3.png') },
+    { id: 4, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamonds4.png') },
+    { id: 5, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamonds5.png') },
+    { id: 6, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamonds6.png') },
+    { id: 7, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamonds7.png') },
+    { id: 8, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamonds8.png') },
+    { id: 9, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamonds9.png') },
+    { id: 10, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamonds10.png') },
+    { id: 11, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamondsJ.png') },
+    { id: 12, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamondsQ.png') },
+    { id: 13, faceUp: false, type: 'diamonds', imgSrc: require('@/game/assets/images/cardDiamondsK.png') }
+  ],
+  hearts: [
+    { id: 1, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHeartsA.png') },
+    { id: 2, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHearts2.png') },
+    { id: 3, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHearts3.png') },
+    { id: 4, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHearts4.png') },
+    { id: 5, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHearts5.png') },
+    { id: 6, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHearts6.png') },
+    { id: 7, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHearts7.png') },
+    { id: 8, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHearts8.png') },
+    { id: 9, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHearts9.png') },
+    { id: 10, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHearts10.png') },
+    { id: 11, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHeartsJ.png') },
+    { id: 12, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHeartsQ.png') },
+    { id: 13, faceUp: false, type: 'hearts', imgSrc: require('@/game/assets/images/cardHeartsK.png') }
+  ],
+  spades: [
+    { id: 1, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpadesA.png') },
+    { id: 2, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpades2.png') },
+    { id: 3, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpades3.png') },
+    { id: 4, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpades4.png') },
+    { id: 5, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpades5.png') },
+    { id: 6, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpades6.png') },
+    { id: 7, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpades7.png') },
+    { id: 8, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpades8.png') },
+    { id: 9, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpades9.png') },
+    { id: 10, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpades10.png') },
+    { id: 11, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpadesJ.png') },
+    { id: 12, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpadesQ.png') },
+    { id: 13, faceUp: false, type: 'spades', imgSrc: require('@/game/assets/images/cardSpadesK.png') }
+  ]
+}

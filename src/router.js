@@ -1,12 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import HomeRoute from '@/home/route'
+import GameRoute from '@/game/route'
 import ScoresRoute from '@/scores/route'
 
 Vue.use(Router)
 
 const routesList = [].concat(
-  // GameRoute,
+  HomeRoute,
+  GameRoute,
   ScoresRoute
 )
 
