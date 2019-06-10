@@ -33,13 +33,13 @@ export default {
   display: flex;
   &__suit {
     position: relative;
-    width: 14rem;
-    margin-right: 3rem;
+    width: 9.8rem;
+    margin-right: 2.442rem;
   }
   &__card {
     position: absolute;
-    width: 14rem;
-    height: 19rem;
+    width: 9.8rem;
+    height: 13.3rem;
     &--empty {
       border: 2px solid $darkgrey;
     }

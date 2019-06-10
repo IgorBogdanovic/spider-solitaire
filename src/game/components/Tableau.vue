@@ -6,7 +6,7 @@
       class="tableau__column">
       <div v-for="(card, j) in cards"
         :key="`tableau-column-card_${i}-${j}`"
-        :style="[{ top: `${j * 3.7}rem` }, { zIndex: `${j}` }]"
+        :style="[{ top: `${j * 2.6}rem` }, { zIndex: `${j}` }]"
         class="tableau__card"
         :class="{ 'face-up': card.faceUp }"
         :ref="card.faceUp ? `faceUpCard-column_${i}-${j}` : 'faceDownCard'"
@@ -115,13 +115,13 @@ export default {
   display: flex;
   &__column {
     position: relative;
-    width: 14rem;
+    width: 9.8rem;
     margin-right: 3rem;
   }
   &__card {
     position: absolute;
-    width: 14rem;
-    height: 19rem;
+    width: 9.8rem;
+    height: 13.3rem;
     &--empty {
       border: 2px solid $darkgrey;
     }
@@ -162,7 +162,8 @@ export default {
         display: block;
       }
       /deep/ button {
-        @include fontSizeRem(10, 16);
+        @include fontSizeRem(10, 14);
+        padding: .8rem;
         white-space: nowrap;
       }
     }

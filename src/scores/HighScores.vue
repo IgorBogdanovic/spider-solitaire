@@ -34,7 +34,8 @@ export default {
       fromRoute: '',
       columns: [
         { column: 'userName', title: 'Name' },
-        { column: 'score' }
+        { column: 'score' },
+        { column: 'moves' }
       ]
     }
   },
@@ -96,6 +97,7 @@ export default {
     width: 20vw;
     min-width: 300px;
     @include breakpoint(desktop) {
+      min-width: 400px;
       margin-right: 2rem;
       &:last-child {
         margin-right: 0;
@@ -105,8 +107,10 @@ export default {
   .go-back-btn {
     text-align: center;
     margin-top: 1.5rem;
+    margin-bottom: 1rem;
     @include breakpoint(desktop) {
       margin-top: 3rem;
+      margin-bottom: 2rem;
     }
   }
 }

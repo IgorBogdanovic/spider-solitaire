@@ -4,67 +4,78 @@
       "id": 1,
       "userId": 101,
       "userName": "Alice",
-      "score": 7694
+      "score": 7694,
+      "moves": 154
     },
     {
       "id": 2,
       "userId": 102,
       "userName": "Bob",
-      "score": 5925
+      "score": 5925,
+      "moves": 167
     },
     {
       "id": 3,
       "userId": 103,
       "userName": "Carol",
-      "score": 6082
+      "score": 6082,
+      "moves": 189
     },
     {
       "id": 4,
       "userId": 104,
       "userName": "Mike",
-      "score": 8955
+      "score": 8955,
+      "moves": 251
     },
     {
       "id": 5,
       "userId": 105,
       "userName": "John",
-      "score": 2674
+      "score": 2674,
+      "moves": 234
     },
     {
       "id": 6,
       "userId": 106,
       "userName": "George",
-      "score": 4698
+      "score": 4698,
+      "moves": 289
     },
     {
       "id": 7,
       "userId": 107,
       "userName": "Ana",
-      "score": 7952
+      "score": 7952,
+      "moves": 188
     },
     {
       "id": 8,
       "userId": 108,
       "userName": "Jane",
-      "score": 3891
+      "score": 3891,
+      "moves": 206
     },
     {
       "id": 9,
       "userId": 109,
       "userName": "testUser",
-      "score": 6756
+      "score": 6756,
+      "moves": 214
     },
     {
       "id": 10,
       "userId": 109,
       "userName": "testUser",
-      "score": 8943
+      "score": 8943,
+      "moves": 184
     },
     {
       "id": 11,
       "userId": 109,
       "userName": "testUser",
-      "score": 4879
+      "score": 4879,
+      "moves": 236
     }
   ]
 }

@@ -4,6 +4,9 @@
       <p class="user-data__name">{{ userName }}</p>
       <p class="user-data__score">Score: {{ score }}</p>
       <p class="user-data__moves">Moves: {{ moves }}</p>
+      <div class="go-back-btn">
+        <btn @click="goBack">Go back</btn>
+      </div>
     </div>
     <div class="game__difficulty">
       <transition name="fade">
@@ -12,7 +15,7 @@
           <btn @click="gameStart('moderate')" color="#0066FF">Two Suit Game (moderate)</btn>
           <btn @click="gameStart('veteran')" color="#CC0000">Four Suit Game (veteran)</btn>
         </div>
-        <div v-else key="game-difficulty-info" class="game__difficulty-info">Choosen difficulty: {{ choosenDifficulty }}</div>
+        <div v-else key="game-difficulty-info" class="game__difficulty-info">Difficulty: {{ choosenDifficulty }}</div>
       </transition>
     </div>
     <div class="game__field">
@@ -27,7 +30,8 @@
           <div v-for="(card, index) in setsOfCards.stock"
             :key="`stock-card_${index}`"
             :style="[{ top: `-${index / 10}rem` }, { right: `${index / 10}rem` }, { zIndex: `${index}` }]"
-            class="stock__card">
+            class="stock__card"
+            v-on="index === setsOfCards.stock.length - 1 ? { click: dealStockCards } : false">
             <card :card="card" />
           </div>
           <!-- case if there is no stock -->
@@ -57,6 +61,7 @@ export default {
   mixins: [ userName, classCleaner ],
   data () {
     return {
+      fromRoute: '',
       score: 500,
       moves: 0,
       choosenDifficulty: '',
@@ -135,6 +140,10 @@ export default {
       this.shareCards(tempStock)
       this.difficultyBtnsVisible = false
     },
+    calculateMove () {
+      this.moves++
+      this.score--
+    },
     moveCards (payload) {
       let tableauColTo = cloneDeep(this.setsOfCards.tableau[payload.columnIndex])
       let tableauColFrom = cloneDeep(this.setsOfCards.tableau[payload.cardsToMove.fromColumn])
@@ -142,24 +151,49 @@ export default {
       this.$set(this.setsOfCards.tableau, payload.columnIndex, tableauColTo)
       tableauColFrom = tableauColFrom.slice(0, payload.cardsToMove.clickedCardIndex)
       this.$set(this.setsOfCards.tableau, payload.cardsToMove.fromColumn, tableauColFrom)
+      this.calculateMove()
       this.classCleaner()
     },
     turnTableauCard (payload) {
       let tableauCol = cloneDeep(this.setsOfCards.tableau[payload.columnIndex])
       tableauCol[payload.cardIndexOfCards].faceUp = true
       this.$set(this.setsOfCards.tableau, payload.columnIndex, tableauCol)
+      this.calculateMove()
+    },
+    dealStockCards () {
+      let isValid = true
+      let cardsToDeal = []
+      for (let col of this.setsOfCards.tableau) {
+        // TODO: popup info for this case
+        if (!col.length) isValid = false
+      }
+      if (isValid) {
+        let stockLength = this.setsOfCards.stock.length
+        cardsToDeal = this.setsOfCards.stock.splice(stockLength - 10, 10)
+        cardsToDeal.reverse()
+        for (let i = 0; i < cardsToDeal.length; i++) {
+          cardsToDeal[i].faceUp = true
+          this.setsOfCards.tableau[i].push(cardsToDeal[i])
+        }
+        this.calculateMove()
+      } else return false
+    },
+    goBack () {
+      this.$router.push(this.fromRoute)
     }
   },
   // beforeRouteEnter (to, from, next) {
-  //   if (store.state.user.userName) next()
-  //   else next('/')
+  //   if (store.state.user.userName) {
+  //     next(vm => {
+  //       vm.fromRoute = from.fullPath
+  //     })
+  //   } else next('/')
   // },
   created () {
     for (let i = 0; i < 10; i++) {
       this.setsOfCards.tableau = this.setsOfCards.tableau.concat(null)
       if (i < 8) this.setsOfCards.foundations = this.setsOfCards.foundations.concat(null)
     }
-    // console.log(cloneDeep)
   }
 }
 </script>
@@ -170,7 +204,7 @@ export default {
 .game {
   position: relative;
   width: 100%;
-  max-width: 192rem;
+  max-width: 136rem;
   margin: 0 auto;
   p {
     @include fontSizeRem(14, 20);
@@ -181,21 +215,22 @@ export default {
   &__user-data {
     display: flex;
     justify-content: space-between;
-    max-width: 80%;
+    align-items: center;
+    max-width: 95%;
     margin: 1rem auto;
     @include breakpoint(desktop) {
-      max-width: 25%;
+      max-width: 40%;
       margin: 2rem auto;
+    }
+    /deep/ button {
+      padding: .2rem 1rem;
     }
   }
   &__difficulty {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    margin: 0 auto;
-    @include breakpoint(desktop) {
-      margin: 0 auto;
-    }
+    white-space: nowrap;
     &-buttons {
       display: flex;
       flex-direction: column;
@@ -203,6 +238,7 @@ export default {
         flex-direction: row;
       }
       /deep/ button {
+        @include fontSizeRem(12, 18);
         margin-bottom: 1rem;
         @include breakpoint(desktop) {
           margin-bottom: 0;
@@ -228,8 +264,8 @@ export default {
     .field-above {
       max-width: 90%;
       margin: 0 auto;
-      padding-top: 10rem;
-      padding-bottom: 40vw;
+      padding-top: 7rem;
+      padding-bottom: 45vw;
     }
     .field-below {
       display: flex;
@@ -238,22 +274,22 @@ export default {
       margin: 0 auto;
       .stock {
         position: relative;
-        width: 14rem;
-        right: 5.83rem;
+        width: 9.8rem;
+        right: 2.45rem;
         &__card {
           position: absolute;
-          width: 14rem;
-          height: 19rem;
+          width: 9.8rem;
+          height: 13.3rem;
           &--empty {
             border: 2px solid $darkgrey;
           }
         }
         &__card-no {
           color: $white;
-          @include fontSizeRem(14, 34);
+          @include fontSizeRem(14, 28);
           font-weight: 900;
           position: absolute;
-          top: 19rem;
+          top: 14rem;
           left: 50%;
           transform: translateX(-50%);
         }

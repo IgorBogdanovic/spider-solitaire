@@ -1,9 +1,7 @@
 /******************************
 *   API Scores CRUD wrapper   *
 ******************************/
-
 import api from '@/api'
-import Score from '@/scores/models/ScoreClass'
 
 export default class ScoresResource {
   constructor () {
@@ -15,7 +13,7 @@ export default class ScoresResource {
       .then(res => {
         const scores = []
         for (const score of res.data) {
-          scores.push(new Score(score))
+          scores.push(score)
         }
         return Promise.resolve(scores)
       })
