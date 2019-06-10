@@ -227,7 +227,9 @@ export default {
   &__field {
     .field-above {
       max-width: 90%;
-      margin: 10rem auto 40vw;
+      margin: 0 auto;
+      padding-top: 10rem;
+      padding-bottom: 40vw;
     }
     .field-below {
       display: flex;
