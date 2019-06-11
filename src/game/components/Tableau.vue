@@ -12,12 +12,13 @@
         :ref="card.faceUp ? `faceUpCard-column_${i}-${j}` : 'faceDownCard'"
         @click="cardClicked(j, card, i, cards)">
         <card :card="card" />
-        <div :ref="`move-button_${i}-${j}`"
+        <div v-if="j === cards.length - 1"
+          :ref="`move-button_${i}-${j}`"
           class="move-button">
           <btn @click="moveBtnClicked($event, i)">Move here</btn>
         </div>
       </div>
-      <!-- case if there is no stock -->
+      <!-- case if there is no cards -->
       <div v-if="!cards || !cards.length" class="tableau__card tableau__card--empty">
         <div ref="move-button_of-empty-column"
           class="move-button">
@@ -52,26 +53,35 @@ export default {
         this.$emit('turnTableauCard', { cardIndexOfCards, columnIndex })
         return
       } else if (cardIndexOfCards < cards.length - 1 && !card.faceUp) return
-      let selectionIsValid = true
+      let selectionIsValid = false
       let columnFaceUpCards = []
       this.cardsToMove = { fromColumn: columnIndex, clickedCardIndex: cardIndexOfCards, cards: [] }
       for (let i = cardIndexOfCards; i < cards.length; i++) {
-        let cardToCheck = cards[i]
         columnFaceUpCards = columnFaceUpCards.concat(this.$refs[`faceUpCard-column_${columnIndex}-${i}`])
-        this.cardsToMove.cards.push(cardToCheck)
+        let cardToCheck = cards[i]
         let withThisCard = cards[i + 1]
         if (withThisCard) {
           let diff = cardToCheck.id - withThisCard.id
-          if (diff === 1) selectionIsValid = true
-          else selectionIsValid = false
-        } else break
+          if (diff === 1) {
+            selectionIsValid = true
+            this.cardsToMove.cards.push(cardToCheck)
+          } else {
+            selectionIsValid = false
+            this.cardsToMove = {}
+            break
+          }
+        } else {
+          selectionIsValid = true
+          this.cardsToMove.cards.push(cardToCheck)
+          break
+        }
       }
       if (selectionIsValid) {
         for (let card of columnFaceUpCards) {
           card.classList.add('is-clicked')
         }
-      } else false
-      this.checkAvailableColumns(card, columnIndex)
+        this.checkAvailableColumns(card, columnIndex)
+      } else return false
     },
     checkAvailableColumns (card, columnIndex) {
       for (let i = 0; i < this.tableau.length; i++) {
@@ -101,9 +111,6 @@ export default {
       e.stopPropagation()
       this.$emit('moveCards', { columnIndex, cardsToMove: this.cardsToMove })
     }
-  },
-  updated () {
-    // console.log(this.tableau)
   }
 }
 </script>

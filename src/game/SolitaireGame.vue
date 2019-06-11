@@ -10,10 +10,13 @@
     </div>
     <div class="game__difficulty">
       <transition name="fade">
-        <div v-if="difficultyBtnsVisible" key="game-difficulty-buttons" class="game__difficulty-buttons">
-          <btn @click="gameStart('easy')" color="#00CC00">One Suit Game (easy)</btn>
-          <btn @click="gameStart('moderate')" color="#0066FF">Two Suit Game (moderate)</btn>
-          <btn @click="gameStart('veteran')" color="#CC0000">Four Suit Game (veteran)</btn>
+        <div v-if="buttonsToDisplay.length" key="game-difficulty-buttons" class="game__difficulty-buttons">
+          <btn v-for="btn in buttonsToDisplay"
+            :key="btn.difficulty"
+            :color="btn.color"
+            @click="gameStart(btn.difficulty)">
+            {{ btn.text }}
+          </btn>
         </div>
         <div v-else key="game-difficulty-info" class="game__difficulty-info">Difficulty: {{ choosenDifficulty }}</div>
       </transition>
@@ -64,8 +67,12 @@ export default {
       fromRoute: '',
       score: 500,
       moves: 0,
+      buttonsToDisplay: [
+        { difficulty: 'easy', color: '#00CC00', text: 'One Suit Game (easy)' },
+        { difficulty: 'moderate', color: '#0066FF', text: 'Two Suit Game (moderate)' },
+        { difficulty: 'veteran', color: '#CC0000', text: 'Four Suit Game (veteran)' }
+      ],
       choosenDifficulty: '',
-      difficultyBtnsVisible: true,
       setsOfCards: {
         tableau: [],
         foundations: [],
@@ -138,7 +145,7 @@ export default {
       }
       this.shuffleCards(tempStock)
       this.shareCards(tempStock)
-      this.difficultyBtnsVisible = false
+      this.buttonsToDisplay = []
     },
     calculateMove () {
       this.moves++
@@ -194,6 +201,15 @@ export default {
       this.setsOfCards.tableau = this.setsOfCards.tableau.concat(null)
       if (i < 8) this.setsOfCards.foundations = this.setsOfCards.foundations.concat(null)
     }
+  },
+  mounted () {
+    const body = document.getElementsByTagName('body')[0]
+    body.addEventListener('mouseup', e => {
+      const clickedEl = e.currentTarget
+      if (!clickedEl.classList.contains('tableau__card') || !clickedEl.classList.contains('stock__card')) {
+        this.classCleaner()
+      }
+    })
   }
 }
 </script>

@@ -5,8 +5,7 @@
       <input type="text"
         @blur="saveUser($event)"
         placeholder="Type your name here..."
-        :value="userName"
-      >
+        :value="userName" />
     </div>
     <div class="home__buttons">
       <btn @click="playGame">Play a game</btn>
