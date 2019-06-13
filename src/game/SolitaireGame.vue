@@ -1,6 +1,6 @@
 <template>
   <div class="game">
-    <div class="game__user-data">
+    <div v-if="!isMobile" class="game__user-data">
       <p class="user-data__name">{{ userName }}</p>
       <p class="user-data__score">Score: {{ score }}</p>
       <p class="user-data__moves">Moves: {{ moves }}</p>
@@ -461,13 +461,9 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 95%;
-    margin: 1rem auto;
+    max-width: 40%;
+    margin: 2rem auto;
     color: $font-color;
-    @include breakpoint(desktop) {
-      max-width: 40%;
-      margin: 2rem auto;
-    }
     /deep/ button {
       padding: .2rem 1rem;
     }
@@ -556,10 +552,12 @@ export default {
     color: $red;
     @include lineHeightRem(20, 0);
     font-weight: 900;
+    text-align: center;
     position: absolute;
     top: 50vh;
     left: 50%;
     transform: translate(-50%, -10vh);
+    width: 25rem;
   }
 }
 .fade-enter-active, .fade-leave-active {

@@ -46,39 +46,25 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 300px;
-    padding: 2rem 0;
+    max-width: 50rem;
+    padding: 4rem 0;
     border-radius: 4px;
-    @include breakpoint(desktop) {
-      max-width: 400px;
-      padding: 4rem 0;
-    }
     p {
       color: $font-color;
       @include fontSizeRem(14, 22);
       @include lineHeightRem(20, 28);
       text-align: center;
-      padding: 0 6rem;
+      padding: 0 12rem;
       margin-bottom: 2rem;
-      @include breakpoint(desktop) {
-        padding: 0 12rem;
-      }
     }
   }
   &__btns {
     text-align: center;
     /deep/ button {
-      padding: .8rem 2rem;
-      margin-right: 1rem;
+      padding: 1rem 3rem;
+      margin-right: 2rem;
       &:last-child {
         margin-right: 0;
-      }
-      @include breakpoint(desktop) {
-        padding: 1rem 3rem;
-        margin-right: 2rem;
-        &:last-child {
-          margin-right: 0;
-        }
       }
     }
   }
