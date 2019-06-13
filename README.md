@@ -20,6 +20,14 @@ yarn add json-server
 json-server db.json
 ```
 
+### Technologies used
+- Webpack
+- Vue
+- Vuex
+- Vue Router
+- Axios
+- JSON Server
+
 ### Game Info & Rules
 The game is played with two packs of playing cards. After thoroughly shuffling both decks together, 4 rows of 10 face down cards are dealt to form the tableau columns. 4 more cards are dealt face down to the 4 leftmost columns and then a face up card is dealt to the end of each column. The remaining cards are placed face down to form the stock.
 
