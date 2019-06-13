@@ -35,7 +35,8 @@ export default {
       columns: [
         { column: 'userName', title: 'Name' },
         { column: 'score' },
-        { column: 'moves' }
+        { column: 'moves' },
+        { column: 'difficulty' }
       ]
     }
   },
@@ -94,11 +95,12 @@ export default {
     }
   }
   &__table {
-    width: 20vw;
+    width: 90%;
     min-width: 300px;
     @include breakpoint(desktop) {
-      min-width: 400px;
-      margin-right: 2rem;
+      width: 20vw;
+      min-width: 90rem;
+      margin-right: 4rem;
       &:last-child {
         margin-right: 0;
       }

@@ -6,7 +6,7 @@
       class="tableau__column">
       <div v-for="(card, j) in cards"
         :key="`tableau-column-card_${i}-${j}`"
-        :style="[{ top: `${j * 2.6}rem` }, { zIndex: `${j}` }]"
+        :style="[{ top: `${j * 4.1}rem` }, { zIndex: `${j}` }]"
         class="tableau__card"
         :class="{ 'face-up': card.faceUp }"
         :ref="card.faceUp ? `faceUpCard-column_${i}-${j}` : 'faceDownCard'"
@@ -62,7 +62,8 @@ export default {
         let withThisCard = cards[i + 1]
         if (withThisCard) {
           let diff = cardToCheck.id - withThisCard.id
-          if (diff === 1) {
+          let isSameType = cardToCheck.type === withThisCard.type
+          if (diff === 1 && isSameType) {
             selectionIsValid = true
             this.cardsToMove.cards.push(cardToCheck)
           } else {
@@ -138,7 +139,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      opacity: .7;
+      opacity: .6;
     }
     &.is-clicked {
       &:after {

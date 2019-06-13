@@ -45,6 +45,9 @@ const actions = {
       .then(scores => {
         ctx.commit('setScores', scores)
       })
+  },
+  postScore: (ctx, payload) => {
+    scoresResource.post(payload)
   }
 }
 

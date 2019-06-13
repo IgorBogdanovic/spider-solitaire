@@ -71,9 +71,12 @@ export default {
       background: transparent;
       border: 2px solid $blue;
       border-radius: 15px;
-      padding: .8rem 2rem;
+      padding: .4rem 2.5rem;
       &::placeholder {
         color: lighten($font-color, 30%);
+      }
+      @include breakpoint(desktop) {
+        padding: .8rem 2rem;
       }
     }
   }
@@ -85,7 +88,7 @@ export default {
       @include fontSizeRem(14, 20);
       color: $white;
       background-color: $blue;
-      padding: .8rem;
+      padding: .4rem;
       border-radius: 15px;
       @include breakpoint(desktop) {
         padding: 1.2rem;

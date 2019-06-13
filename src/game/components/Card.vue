@@ -13,8 +13,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../-common-/assets/style/settings/_module-settings.scss';
-
 .card-image {
   width: 100%;
   height: 100%;

@@ -3,68 +3,93 @@
     {
       "id": 1,
       "userName": "Alice",
-      "score": 7694,
-      "moves": 154
+      "score": 1233,
+      "moves": 154,
+      "difficulty": "easy"
     },
     {
       "id": 2,
       "userName": "Bob",
-      "score": 5925,
-      "moves": 167
+      "score": 960,
+      "moves": 142,
+      "difficulty": "easy"
     },
     {
       "id": 3,
       "userName": "Carol",
-      "score": 6082,
-      "moves": 189
+      "score": 891,
+      "moves": 139,
+      "difficulty": "easy"
     },
     {
       "id": 4,
       "userName": "Mike",
-      "score": 8955,
-      "moves": 251
+      "score": 1067,
+      "moves": 167,
+      "difficulty": "easy"
     },
     {
       "id": 5,
       "userName": "John",
-      "score": 2674,
-      "moves": 234
+      "score": 1089,
+      "moves": 187,
+      "difficulty": "easy"
     },
     {
       "id": 6,
       "userName": "George",
-      "score": 4698,
-      "moves": 289
+      "score": 1462,
+      "moves": 144,
+      "difficulty": "easy"
     },
     {
       "id": 7,
       "userName": "Ana",
-      "score": 7952,
-      "moves": 188
+      "score": 988,
+      "moves": 143,
+      "difficulty": "easy"
     },
     {
       "id": 8,
       "userName": "Jane",
-      "score": 3891,
-      "moves": 206
+      "score": 1187,
+      "moves": 151,
+      "difficulty": "easy"
     },
     {
       "id": 9,
       "userName": "testUser",
-      "score": 6756,
-      "moves": 214
+      "score": 769,
+      "moves": 214,
+      "difficulty": "easy"
     },
     {
       "id": 10,
       "userName": "testUser",
-      "score": 8943,
-      "moves": 184
+      "score": 933,
+      "moves": 184,
+      "difficulty": "easy"
     },
     {
       "id": 11,
       "userName": "testUser",
-      "score": 4879,
-      "moves": 236
+      "score": 1068,
+      "moves": 168,
+      "difficulty": "easy"
+    },
+    {
+      "userName": "giga0",
+      "score": 1157,
+      "moves": 153,
+      "difficulty": "easy",
+      "id": 12
+    },
+    {
+      "userName": "giga0",
+      "score": 1146,
+      "moves": 162,
+      "difficulty": "easy",
+      "id": 13
     }
   ]
 }

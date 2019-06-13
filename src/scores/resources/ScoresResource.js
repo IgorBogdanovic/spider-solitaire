@@ -21,4 +21,14 @@ export default class ScoresResource {
         return Promise.reject(err)
       })
   }
+
+  post (payload) {
+    return api.post('high-scores', payload)
+      .then(res => {
+        return Promise.resolve(res.data)
+      })
+      .catch(err => {
+        return Promise.reject(err)
+      })
+  }
 }

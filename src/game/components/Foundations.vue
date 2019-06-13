@@ -5,6 +5,7 @@
       class="foundations__suit">
       <div v-for="(card, j) in suit"
         :key="`foundations-suit-card_${i}-${j}`"
+        :style="[{ top: `-${j / 10}rem` }, { right: `${j / 10}rem` }, { zIndex: `${j}` }]"
         class="foundations__card">
         <card :card="card" />
       </div>
